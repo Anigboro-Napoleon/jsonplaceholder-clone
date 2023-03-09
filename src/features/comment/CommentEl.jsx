@@ -23,7 +23,7 @@ const CommentEl = () => {
     
     return (
         <Box pt='80px'>
-            <Text fontSize='3.75rem' className='fira'>
+            <Text fontSize={{ base: '2rem', lg: '3.75rem' }} className='fira'>
                 Comments
                 <Text as={'span'} fontSize='16px' ml='10px'>[{comment.comments.length}]</Text>
             </Text>
@@ -34,7 +34,7 @@ const CommentEl = () => {
                 !comment.loading && comment.comments.length
                     ? (
                         <Box maxW={'95%'} mx='auto' mb='30px'>
-                            <Grid gridTemplateColumns={'repeat(4, 1fr)'} gap='20px'>
+                            <Grid gridTemplateColumns={{ base: '1fr', lg: 'repeat(4, 1fr)' }} gap='20px'>
                                 {
                                     comment.comments
                                         .slice(pagesVisited, pagesVisited + usersPerPage)

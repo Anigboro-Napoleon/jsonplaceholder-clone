@@ -4,11 +4,14 @@ import { Link } from 'react-router-dom'
 const Nav = () => {
     return (
         <Flex 
-            minH={'64px'} bgColor='#121D33' p='24px' 
+            minH={'64px'} bgColor='#121D33' p='24px'
             justify={'space-between'} align='center' boxShadow={'0 0 8px 0 #353535'}
         >
             <Link to='/' color='#fff' fontSize={'1.5rem'} className='fira nav' fontWeight={'400'}>R,R & J</Link>
-            <Flex color='#fff' fontSize={'1rem'} className='fira' fontWeight={'400'} gap='80px'>
+            <Flex 
+                color='#fff' fontSize={'1rem'} className='fira' fontWeight={'400'} gap='80px' 
+                display={{ base: 'none', lg: 'flex' }}
+            >
                 <Link to={'/albums'}>Albums</Link>
                 <Link to={'/comments'}>Comments</Link>
                 <Link to={'/photos'}>Photos</Link>

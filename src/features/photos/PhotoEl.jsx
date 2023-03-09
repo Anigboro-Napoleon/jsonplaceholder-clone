@@ -17,7 +17,7 @@ const PhotoEl = () => {
     
     return (
         <Box pt='80px'>
-            <Text fontSize='3.75rem' className='fira'>
+            <Text fontSize={{ base: '2rem', lg: '3.75rem' }} className='fira'>
                 Photos
                 <Text as={'span'} fontSize='16px' ml='10px'>[{photo.photos.length}]</Text>
             </Text>
@@ -28,7 +28,7 @@ const PhotoEl = () => {
                 !photo.loading && photo.photos.length
                     ? (
                         <Box maxW={'95%'} mx='auto' mb='30px'>
-                            <Grid gridTemplateColumns={'repeat(4, 1fr)'} gap='20px'>
+                            <Grid gridTemplateColumns={{ base: '1fr', lg: 'repeat(4, 1fr)' }} gap='20px'>
                                 {
                                     photo.photos
                                         .slice(pagesVisited, pagesVisited + usersPerPage)

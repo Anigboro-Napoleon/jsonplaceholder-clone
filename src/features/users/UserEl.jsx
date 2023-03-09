@@ -17,7 +17,7 @@ const UserEl = () => {
     
     return (
         <Box pt='80px'>
-            <Text fontSize='3.75rem' className='fira'>
+            <Text fontSize={{ base: '2rem', lg: '3.75rem' }} className='fira'>
                 Users
                 <Text as={'span'} fontSize='16px' ml='10px'>[{user.users.length}]</Text>
             </Text>
@@ -27,15 +27,15 @@ const UserEl = () => {
             {
                 !user.loading && user.users.length
                     ? (
-                        <Box maxW={'90%'} mx='auto' mb='30px'>
-                            <Grid gridTemplateColumns={'repeat(4, 1fr)'} gap='20px'>
+                        <Box maxW={'100%'} mx='30px' mb='30px'>
+                            <Grid gridTemplateColumns={{ base: '1fr', lg: 'repeat(4, 1fr)' }} gap='20px'>
                                 {
                                     user.users
                                         .slice(pagesVisited, pagesVisited + usersPerPage)
                                         .map(user => (
                                         <Flex
                                         key={user.id}
-                                        align='flex-start' w='280px' p='10px' borderRadius={'4px'}
+                                        align='flex-start' p='10px' borderRadius={'4px'}
                                         boxShadow={'0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12)'} justify='center'
                                         >
                                             <Text 

@@ -18,7 +18,7 @@ const PostEl = () => {
     
     return (
         <Box pt='80px'>
-            <Text fontSize='3.75rem' className='fira'>
+            <Text fontSize={{ base: '2rem', lg: '3.75rem' }} className='fira'>
                 Posts
                 <Text as={'span'} fontSize='16px' ml='10px'>[{post.posts.length}]</Text>
             </Text>
@@ -28,14 +28,13 @@ const PostEl = () => {
             {
                 !post.loading && post.posts.length
                     ? (
-                        <Box maxW={'1200px'} mx='auto' mb='30px'>
-                            <Grid gridTemplateColumns={'repeat(4, 1fr)'} gap='20px'>
+                        <Box maxW={'100%'} mx='30px' mb='30px'>
+                            <Grid gridTemplateColumns={{ base: '1fr', lg: 'repeat(4, 1fr)' }} gap='20px'>
                                 {post.posts
                                     .slice(pagesVisited, pagesVisited + usersPerPage)
                                     .map((post) => (
                                     <Flex 
-                                        key={post.id} w='280px' h='300px' overflowY={'scroll'}
-                                        align='flex-start' p='10px' borderRadius={'4px'}
+                                        key={post.id} align='flex-start' p='10px' borderRadius={'4px'}
                                         boxShadow={'0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12)'}
                                     >
                                         <Text

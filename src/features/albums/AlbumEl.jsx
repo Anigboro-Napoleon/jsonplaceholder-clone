@@ -18,7 +18,7 @@ const AlbumEl = () => {
 
     return (
         <Box pt='80px'>
-            <Text fontSize='3.75rem' className='fira'>
+            <Text fontSize={{ base: '2rem', lg: '3.75rem' }} className='fira'>
                 Albums
                 <Text as={'span'} fontSize='16px' ml='10px'>[{album.albums.length}]</Text>
             </Text>
@@ -29,7 +29,7 @@ const AlbumEl = () => {
                 !album.loading && album.albums.length
                     ? (
                         <Box maxW={'95%'} mx='auto' mb='30px'>
-                            <Grid gridTemplateColumns={'repeat(4, 1fr)'} gap='20px'>
+                            <Grid gridTemplateColumns={{ base: '1fr', lg: 'repeat(4, 1fr)' }} gap='20px'>
                                 {
                                     album.albums
                                         .slice(pagesVisited, pagesVisited + usersPerPage)
