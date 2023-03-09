@@ -1,38 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap');
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.fira {
+  font-family: 'Fira Code', monospace;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.nav {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 400;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav:hover {
+  text-decoration: underline;
+}
+
+.paginationBtn {
+  width: 80%;
+  margin-inline: auto;
+  height: 40px;
+  list-style: none;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  gap: 7px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  margin-top: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.paginationBtn a {
+  font-size: 0.875rem;
+  font-family: 'Fira Code', monospace;
+  font-weight: 400;
+  padding: 4px 8px;
+  /* margin: 8px; */
+  border-radius: 100px;
+  border: 1px solid rgba(0, 0, 0, 0.23);
+  color: #000;
+  cursor: pointer;
+  transition: all .3s ease-in;
+  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.paginationBtn a:hover {
+  background-color: rgba(152, 150, 150, 0.128);
 }
+
+.paginationActive a {
+  color: rgb(75, 68, 178);
+  background-color: rgba(219, 217, 253, 0.534);
+}
+
