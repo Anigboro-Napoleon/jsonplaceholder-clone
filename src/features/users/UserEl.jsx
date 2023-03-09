@@ -23,7 +23,7 @@ const UserEl = () => {
                 <Text as={'span'} fontSize='16px' ml='10px'>[{user.users.length}]</Text>
             </Text>
             <UserModal />
-            {user.loading && <Loading />}
+            {user.loading && <div>Loading...</div>}
             {!user.loading && user.error ? <div>Error: {user.error}</div> : null}
             {
                 !user.loading && user.users.length
