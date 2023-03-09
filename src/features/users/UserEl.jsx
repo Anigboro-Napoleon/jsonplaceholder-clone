@@ -6,6 +6,7 @@ import { deleteUsers, fetchUsers } from "./userSlice";
 import { RiDeleteBin2Fill } from 'react-icons/ri'
 import ReactPaginate from "react-paginate";
 import { EditUserModal, UserModal } from "../../components/Modal";
+import Loading from "../../components/Loading";
 
 const UserEl = () => {
     const { user, pagesVisited, changePage, previous, next, usersPerPage, userPageCount } = useGlobalContext()
@@ -22,7 +23,7 @@ const UserEl = () => {
                 <Text as={'span'} fontSize='16px' ml='10px'>[{user.users.length}]</Text>
             </Text>
             <UserModal />
-            {user.loading && <div>Loading...</div>}
+            {user.loading && <Loading />}
             {!user.loading && user.error ? <div>Error: {user.error}</div> : null}
             {
                 !user.loading && user.users.length
