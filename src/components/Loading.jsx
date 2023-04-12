@@ -1,4 +1,4 @@
-import { Box, Flex, Progress } from '@chakra-ui/react'
+import { Flex } from '@chakra-ui/react'
 import styled, { keyframes } from 'styled-components'
 
 const Loading = () => {
